@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Телефонная книжка</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Фамилию</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+        </tr>
+        @using P19
+        @{
+            var book = new Book();
+            var num = book.GetNumbers();
+        }
+
+        @foreach (var i in num)
+        {
+            <tr>
+                <td onclick="myFunction(this" id="@i">@i.Id</td>
+                <td>@i.Surname</td>
+                <td>@i.Name</td>
+                <td>@i.Name2</td>
+            </tr>
+        }
+    </table>
+    @{ int f;}
+    <script>
+        function myFunction(x) {
+            var g = int.Parse(x.innerText)
+            var i = book.GetNumber(int.Parse(x.innerText))
+            alert("Row index is: " + x.innerText)
+    </script>
+</body>
+</html>
