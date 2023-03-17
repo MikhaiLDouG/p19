@@ -28,7 +28,7 @@ namespace P19
 
         public NumberData GetNumber(int id)
         {
-            foreach (var i in numbers)
+            foreach (var i in GetNumbers())
             {
                 if (i.Id == id)
                 {

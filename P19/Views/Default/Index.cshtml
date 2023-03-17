@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Телефонная книжка</title>
     <style>
         table, td {
@@ -9,7 +10,7 @@
     </style>
 </head>
 <body>
-    <table border="1">
+    <table border="1" class="table table-dark table-striped">
         <tr>
             <th>ID</th>
             <th>Фамилию</th>
@@ -25,19 +26,13 @@
         @foreach (var i in num)
         {
             <tr>
-                <td onclick="myFunction(this" id="@i">@i.Id</td>
+
+                <td onclick="document.location='Default/Page' + @i.Id">@i.Id</td>
                 <td>@i.Surname</td>
                 <td>@i.Name</td>
                 <td>@i.Name2</td>
             </tr>
         }
     </table>
-    @{ int f;}
-    <script>
-        function myFunction(x) {
-            var g = int.Parse(x.innerText)
-            var i = book.GetNumber(int.Parse(x.innerText))
-            alert("Row index is: " + x.innerText)
-    </script>
 </body>
 </html>
